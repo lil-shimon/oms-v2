@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"github.com/lil-shimon/oms-v2/server/model"
 )
 
 func main() {
@@ -17,13 +18,8 @@ func main() {
 	r.Run(":1323")
 }
 
-type User struct {
-	gorm.Model
-	Name string `json:"name"`
-}
-
 func DBMigrate(db *gorm.DB) *gorm.DB {
-	db.AutoMigrate(&User{})
+	db.AutoMigrate(&model.User{})
 	return db
 }
 
