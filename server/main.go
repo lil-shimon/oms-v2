@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"github.com/lil-shimon/oms-v2/server/model"
+	"github.com/lil-shimon/oms/model"
 )
 
 func main() {
@@ -27,7 +27,7 @@ func DBConnect() *gorm.DB {
 	DBMS := "mysql"
 	USER := "root"
 	PASS := "root"
-	PROTOCOL := "tcp(db:3306)"
+	PROTOCOL := "tcp(mysql_host:3306)"
 	DBNAME := "oms"
 	CONNECT := USER + ":" + PASS + "@" + PROTOCOL + "/" + DBNAME + "?parseTime=true"
 
