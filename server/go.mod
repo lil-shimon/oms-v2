@@ -1,4 +1,4 @@
-module oms
+module github.com/lil-shimon/oms
 
 go 1.16
 
