@@ -1,9 +1,14 @@
-FROM golang:1.15-alpine
+FROM golang:latest
 
+COPY server/ /go/src/server
 WORKDIR /go/src/server
-COPY ../../server .
 
-RUN apk update && \
-  apk add --no-cache git
+# gin install
+RUN go get -u github.com/gin-gonic/gin && \ 
+  # gorm install
+  go get github.com/jinzhu/gorm && \
+  go get github.com/go-sql-driver/mysql
 
 EXPOSE 1323
+
+CMD ["go", "run", "main.go"]
