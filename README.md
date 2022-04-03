@@ -4,7 +4,7 @@
 
 exec
 ```
-docker-compose exec oms /bin/ash
+docker-compose exec oms /bin/bash
 ```
 
 ## stacks
