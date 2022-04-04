@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	DBMigrate(DBConnect())
+	DBConnect()
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
@@ -27,8 +27,8 @@ func DBConnect() *gorm.DB {
 	DBMS := "mysql"
 	USER := "root"
 	PASS := "root"
-	PROTOCOL := "tcp(mysql_host:3306)"
-	DBNAME := "oms"
+	PROTOCOL := "tcp(mysql:3306)"
+	DBNAME := "questar_order_management_system"
 	CONNECT := USER + ":" + PASS + "@" + PROTOCOL + "/" + DBNAME + "?parseTime=true"
 
 	db, err := gorm.Open(DBMS, CONNECT)
