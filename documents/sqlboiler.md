@@ -32,3 +32,20 @@ go get github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-mysql
 Error: unable to initialize tables: unable to fetch table data: something totally unexpected happened when running the binary driver /go/src/server/sqlboiler-mysql: fork/exec /go/src/server/sqlboiler-mysql: no such file or directory
 ```
 再度インストールで治った
+
+## error 3
+```
+Error: unable to initialize tables: primary key missing in tables (password_resets)
+```
+
+## 解決方法
+```
+[mysql]
+  dbname="oms"
+  host="mysql_host"
+  port=3306
+  user="admin"
+  pass="admin"  
+  sslmode="false"
+  blacklist=["password_resets"] <- 追加
+  ```

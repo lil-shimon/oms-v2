@@ -5,3 +5,4 @@
   user="admin"
   pass="admin"  
   sslmode="false"
+  blacklist=["password_resets"]
