@@ -6,7 +6,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-// DB接続する関数
+// DBConnectする関数
 // sqlboiler
 // *sql.DBをreturnする
 func DBConnect() *sql.DB {
